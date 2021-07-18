@@ -1,0 +1,92 @@
+package com.company;
+import java.util.*;
+public class Game2 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Random ran = new Random();
+        System.out.println("1- Rock \n2- Scissor \n3-Paper");
+        System.out.println("Lets play!!!!");
+
+
+
+        int comp = 0;
+        int user = 0;
+
+
+        for (int i = 1; i <= 3; i++) {
+            System.out.println("Enter your choice");
+
+            int attack = sc.nextInt();
+            int num = ran.nextInt(3)+1;
+
+            if (attack == 1 && num == 1) {
+                System.out.println("user:Rock");
+                System.out.println("comp:Rock");
+                System.out.println("Game is tie");
+            } else if (attack == 2 && num == 2) {
+                System.out.println("user:Scissor");
+                System.out.println("comp:Scissor");
+                System.out.println("Game is tie");
+            } else if (attack == 3 && num == 3) {
+                System.out.println("user:Paper");
+                System.out.println("comp:Paper");
+                System.out.println("Game is tie");
+            } else if (attack == 1 && num == 2) {
+                System.out.println("user:Rock");
+                System.out.println("comp:Scissor");
+                System.out.println("You won");
+                user++;
+            } else if (attack == 2 && num == 3) {
+                System.out.println("user:Scissor");
+                System.out.println("comp:Paper");
+                System.out.println("You won");
+                user++;
+            } else if (attack == 3 && num == 2) {
+                System.out.println("user:Paper");
+                System.out.println("comp:Scissor");
+                System.out.println("Computer won");
+                comp++;
+            } else if (attack == 3 && num == 1) {
+                System.out.println("user:Paper");
+                System.out.println("comp:Rock");
+                System.out.println("You won");
+                user++;
+            } else if (attack == 1 && num == 3) {
+                System.out.println("user:Rock");
+                System.out.println("comp:Paper");
+                System.out.println("Computer won");
+                comp++;
+            } else if (attack == 2 && num == 1) {
+                System.out.println("user:Scissor");
+                System.out.println("comp:Rock");
+                System.out.println("Computer won");
+                comp++;
+            } else {
+                System.out.println("Invalid input");
+            }
+
+        }
+        if (user<comp){
+            System.out.println("____________________");
+            System.out.println("Computer points: "+comp);
+            System.out.println("Your points: "+user+"\n");
+            System.out.println("Result: You lose this battle😭");
+        }
+        else if (user>comp){
+            System.out.println("____________________");
+            System.out.println("Computer points: "+comp);
+            System.out.println("Your points: "+user+"\n");
+            System.out.println("Result: 🎉You won this match!!🤩");
+        }
+        else if (user==comp) {
+            System.out.println("_____________________");
+            System.out.println("Computer points: " + comp);
+            System.out.println("Your points: " + user + "\n");
+            System.out.println("Result: This Match is Draw!");
+        }
+
+
+
+    }
+}
+
